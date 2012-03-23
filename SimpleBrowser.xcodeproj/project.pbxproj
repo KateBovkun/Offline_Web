@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53925FAC151C53F300711A7F /* PageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 53925FAB151C53F300711A7F /* PageLoader.m */; };
 		5393A5AE151B35FA00C2E684 /* SDURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5393A5AD151B35FA00C2E684 /* SDURLCache.m */; };
 		5393A5B2151B426C00C2E684 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5393A5B0151B426C00C2E684 /* ListViewController.m */; };
 		5393A5B3151B426C00C2E684 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5393A5B1151B426C00C2E684 /* ListViewController.xib */; };
@@ -35,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53925FAA151C53F300711A7F /* PageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageLoader.h; sourceTree = "<group>"; };
+		53925FAB151C53F300711A7F /* PageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageLoader.m; sourceTree = "<group>"; };
 		5393A5AC151B35FA00C2E684 /* SDURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDURLCache.h; sourceTree = "<group>"; };
 		5393A5AD151B35FA00C2E684 /* SDURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDURLCache.m; sourceTree = "<group>"; };
 		5393A5AF151B426C00C2E684 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 				B5D92C6413FFFBBA00510F99 /* Supporting Files */,
 				53DF5C071519E6A6003C81A4 /* WorkWithCache.h */,
 				53DF5C081519E6A6003C81A4 /* WorkWithCache.m */,
+				53925FAA151C53F300711A7F /* PageLoader.h */,
+				53925FAB151C53F300711A7F /* PageLoader.m */,
 			);
 			path = SimpleBrowser;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				53DF5C261519F293003C81A4 /* FMResultSet.m in Sources */,
 				5393A5AE151B35FA00C2E684 /* SDURLCache.m in Sources */,
 				5393A5B2151B426C00C2E684 /* ListViewController.m in Sources */,
+				53925FAC151C53F300711A7F /* PageLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@
 #import "FMDatabase.h"
 #import "FMResultSet.h"
 #import "ListViewController.h"
+#import "PageLoader.h"
 
 @implementation SimpleBrowserViewController
 
@@ -92,6 +93,10 @@
 
 - (IBAction)tapCheckButton:(id)sender
 {
+    PageLoader * loader = [[PageLoader alloc] init];
+    [loader requestPage];
+}
+/*{
     [urlCache isCached:[NSURL URLWithString:@"http://ddarchive.net/wp-projects/ipad2/html5-test/articles/article-1.html"]];
     [urlCache isCached:[NSURL URLWithString:@"http://ddarchive.net/wp-projects/ipad2/html5-test/articles/article-2.html"]];
     [urlCache isCached:[NSURL URLWithString:@"http://ddarchive.net/wp-projects/ipad2/html5-test/articles/article-3.html"]];
@@ -135,7 +140,7 @@
     [urlCache isCached:[NSURL URLWithString:@"http://www.washingtonpost.com/rf/image_606w/2010-2019/WashingtonPost/2012/03/07/Style/Images/kucinich--452x273.jpg?uuid=-7zdCmilEeGuP_AdkGeSuQ"]];
     [urlCache isCached:[NSURL URLWithString:@"http://img.wpdigital.net/rf/image_606w/2010-2019/WashingtonPost/2012/03/06/Food/Videos/03062012-67v/03062012-67v.jpg"]];
     [urlCache isCached:[NSURL URLWithString:@"http://www.washingtonpost.com/rf/image_606w/WashingtonPost/Content/Blogs/arts-post/Images/509485442.jpg"]];
-}
+}*/
 
 
 - (IBAction)tapViewData:(id)sender

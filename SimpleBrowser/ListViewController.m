@@ -71,7 +71,7 @@
 {
     if (section == 0) 
     {
-        return 41;
+        return 42;
     }
     return 0;
 }
@@ -135,6 +135,7 @@
         @"http://www.washingtonpost.com/rf/image_606w/2010-2019/WashingtonPost/2012/03/07/Style/Images/kucinich--452x273.jpg?uuid=-7zdCmilEeGuP_AdkGeSuQ",
         @"http://img.wpdigital.net/rf/image_606w/2010-2019/WashingtonPost/2012/03/06/Food/Videos/03062012-67v/03062012-67v.jpg",
         @"http://www.washingtonpost.com/rf/image_606w/WashingtonPost/Content/Blogs/arts-post/Images/509485442.jpg",
+        @"http://pionerskaya.ru/wp/CleanHTML/index-manifest.html",
      nil] retain];
 }
 

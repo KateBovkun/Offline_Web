@@ -364,7 +364,6 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
     [self saveCacheInfo];
 }
 
-
 - (void)storeToDisk:(NSDictionary *)context
 {
     NSURLRequest *request = [context objectForKey:@"request"];
