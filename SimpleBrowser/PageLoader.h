@@ -7,13 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ASIHTTPRequest.h"
+#import "ASIHTTPRequestDelegate.h"
+#import "SimpleBrowserDelegate.h"
 
-@interface PageLoader : NSObject <NSURLConnectionDataDelegate>
+@interface PageLoader : NSObject <NSURLConnectionDataDelegate, ASIHTTPRequestDelegate>
 {
     NSURLConnection * myconnection;
     NSMutableData * responseData;
 }
 
+@property (nonatomic, retain) id<SimpleBrowserDelegate> delegate;
+
 -(void) requestPage;
+-(void) requestPageWithURL:(NSURL*)url;
+-(void) ASIRequestPageWithURL:(NSURL *)url;
 
 @end

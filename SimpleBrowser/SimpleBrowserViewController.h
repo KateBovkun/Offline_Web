@@ -12,6 +12,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PageLoader.h"
 #import "SDURLCache.h"
 #import "SimpleBrowserDelegate.h"
 
@@ -21,12 +22,16 @@
 	IBOutlet UIWebView *webView;
 	IBOutlet UITextField *urlBar;
     IBOutlet UIButton *checkCache;
+    IBOutlet UIButton *ifMoSiButton;
+    IBOutlet UITextView *message;
     SDURLCache * urlCache;
+    PageLoader * loader;
 }
 
 - (void)loadURL:(NSURL *)url;
 - (IBAction)openURL:(id)sender;
 - (IBAction)tapCheckButton:(id)sender;
 - (IBAction)tapLocalButton:(id)sender;
+- (IBAction)tapUseIfMoSi:(id)sender;
 
 @end

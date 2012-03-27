@@ -10,6 +10,18 @@
 
 @implementation PageLoader
 
+@synthesize delegate;
+
+#pragma mark request 
+
+-(void) requestPageWithURL:(NSURL *)url
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLCacheStorageAllowed timeoutInterval:20.0f];
+    
+    responseData = [[NSMutableData alloc] init];
+    myconnection = [[NSURLConnection connectionWithRequest:request delegate:self] retain];
+}
+
 -(void) requestPage
 {
     NSString *urlString = @"http://pionerskaya.ru/wp/CleanHTML/index-manifest.html";
@@ -22,6 +34,37 @@
     myconnection = [[NSURLConnection connectionWithRequest:request delegate:self] retain];
 }
 
+-(void) ASIRequestPageWithURL:(NSURL *)url
+{
+    NSString *lastModified = [[NSUserDefaults standardUserDefaults] objectForKey:@"Last-Modified"];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    if (lastModified == nil) 
+    {
+        lastModified = @"";
+    }
+    [request addRequestHeader:@"If-Modified-Since" value: lastModified];
+    request.delegate = self;
+    [request startAsynchronous];
+}
+
+#pragma ASI request
+
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    NSString *lastModified = [[request responseHeaders] objectForKey:@"Last-Modified"];
+    [[NSUserDefaults standardUserDefaults] setObject:lastModified forKey:@"Last-Modified"];
+    if ([request responseStatusCode] != 304) 
+    {
+        [delegate refreshPage];
+    }
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    NSLog(@"Something gone wrong ...");
+}
+
+#pragma NSConnection delegate
 
 -(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {   

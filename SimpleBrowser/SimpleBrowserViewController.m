@@ -11,9 +11,15 @@
 #import "FMDatabase.h"
 #import "FMResultSet.h"
 #import "ListViewController.h"
-#import "PageLoader.h"
+
+@interface SimpleBrowserViewController ()
+-(NSString*) checkURLBarText;
+-(void) loadDataWithASI;
+@end
 
 @implementation SimpleBrowserViewController
+
+#pragma mark View
 
 - (void)viewDidLoad
 {
@@ -21,14 +27,44 @@
                                                          diskCapacity:1024*1024*5 // 5MB disk cache
                                                              diskPath:[SDURLCache defaultCachePath]] retain];
     [NSURLCache setSharedURLCache:urlCache];
+    ifMoSiButton.selected = YES;
+    [self checkURLBarText];
     cachePath = nil;
 	[super viewDidLoad];
 }
 
+
+- (void)webViewDidFinishLoad:(UIWebView *)wv
+{
+    
+}
+
+- (void) viewUnload
+{
+    for(UIView * subview in self.view.subviews)
+    {
+        [subview setHidden:NO];
+    } 
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return YES;
+}
+
+-(void)dealloc
+{
+    [urlCache release];
+    [super dealloc];
+}
+
+#pragma mark Browser
+
 - (IBAction)openURL:(id)sender
 {
 	[urlBar resignFirstResponder];
-	NSURL *url = [NSURL URLWithString:[urlBar text]];
+	NSURL *url = [NSURL URLWithString:[self checkURLBarText]];
 	if (![url scheme]) {
 		url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@",[urlBar text]]];
 	}
@@ -40,12 +76,88 @@
 
 - (void)loadURL:(NSURL *)url
 {
+    if (ifMoSiButton.selected) 
+    {
+        [self loadDataWithASI];
+    }
 	[webView loadRequest:[NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:100]];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)wv
+// We'll take over the page load when the user clicks on a link
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)theRequest navigationType:(UIWebViewNavigationType)navigationType
 {
-    
+	
+	// Other request types are often things like iframe content, we have no choice but to let UIWebView load them itself
+	return YES;
+}
+
+- (IBAction)historyBack:(id)sender
+{
+	[webView goBack];
+}
+
+- (IBAction)historyForward:(id)sender
+{
+	[webView goForward];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	[self openURL:nil];
+	return NO;
+}
+
+- (NSString*) checkURLBarText
+{
+    if (ifMoSiButton.selected) 
+    {
+        if (urlBar.text != @"http://pionerskaya.ru/wp/updating/date.html") 
+        {
+            urlBar.text = @"http://pionerskaya.ru/wp/updating/date.html";
+            return urlBar.text;
+        }
+    }
+    NSURL *url = [NSURL URLWithString:[urlBar text]];
+    NSString * urlString = [urlBar text];
+	if (![url scheme]) {
+        urlString = [NSString stringWithFormat:@"http://%@",[urlBar text]];
+		url = [NSURL URLWithString:urlString];
+	}
+	if (!url) {
+		return nil;
+	}
+    return urlString;
+}
+
+- (void) refreshPage
+{
+    [loader release];
+    NSURL* url = [NSURL URLWithString:[self checkURLBarText]];
+    [webView loadRequest:[NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:100]];
+    NSDate *dateToday =[NSDate date];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"ccc hh:mm"];
+    NSString *string = [format stringFromDate:dateToday];
+    message.text = [NSString stringWithFormat:@"Page change at %@",string];
+    [format release];
+}
+
+#pragma mark Special
+
+- (void) loadDataWithASI
+{
+    loader = [[PageLoader alloc] init];
+    loader.delegate = self;
+    [loader ASIRequestPageWithURL:[NSURL URLWithString:[self checkURLBarText]]];
+}
+
+- (IBAction)tapUseIfMoSi:(id)sender
+{
+    ifMoSiButton.selected = !ifMoSiButton.selected;
+    if (!ifMoSiButton.selected) 
+    {
+        message.text = @"";
+    }
+    [self checkURLBarText];
 }
 
 - (IBAction)tapLocalButton:(id)sender
@@ -60,41 +172,12 @@
     [self.view addSubview:listView.view];
 }
 
-- (void) viewUnload
-{
-    for(UIView * subview in self.view.subviews)
-    {
-        [subview setHidden:NO];
-    } 
-}
-
-// We'll take over the page load when the user clicks on a link
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)theRequest navigationType:(UIWebViewNavigationType)navigationType
-{
-	
-	// Other request types are often things like iframe content, we have no choice but to let UIWebView load them itself
-	return YES;
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	[self openURL:nil];
-	return NO;
-}
-
-
-- (IBAction)historyBack:(id)sender
-{
-	[webView goBack];
-}
-- (IBAction)historyForward:(id)sender
-{
-	[webView goForward];
-}
 
 - (IBAction)tapCheckButton:(id)sender
 {
-    PageLoader * loader = [[PageLoader alloc] init];
+    loader = [[PageLoader alloc] init];
     [loader requestPage];
+    [loader release];
 }
 /*{
     [urlCache isCached:[NSURL URLWithString:@"http://ddarchive.net/wp-projects/ipad2/html5-test/articles/article-1.html"]];
@@ -182,16 +265,5 @@
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return YES;
-}
-
--(void)dealloc
-{
-    [urlCache release];
-    [super dealloc];
-}
 
 @end

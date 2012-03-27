@@ -11,5 +11,6 @@
 @protocol SimpleBrowserDelegate
 
 - (void) viewUnload;
+- (void) refreshPage;
 
 @end
