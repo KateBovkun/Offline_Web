@@ -8,6 +8,7 @@
 
 #import "SDURLCache.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "WorkWithArchive.h"
 
 static NSTimeInterval const kSDURLCacheInfoDefaultMinCacheInterval = 5 * 60; // 5 minute
 static NSString *const kSDURLCacheInfoFileName = @"cacheInfo.plist";
@@ -368,10 +369,15 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
 {
     NSURLRequest *request = [context objectForKey:@"request"];
     NSCachedURLResponse *cachedResponse = [context objectForKey:@"cachedResponse"];
-
+    
     NSString *cacheKey = [SDURLCache cacheKeyForURL:request.URL];
     NSString *cacheFilePath = [diskCachePath stringByAppendingPathComponent:cacheKey];
 
+    if( [[[cachedResponse response] MIMEType] isEqualToString:@"application/zip"])
+    {
+        [WorkWithArchive extractFilesWithData:[[NSMutableData alloc] initWithData:[cachedResponse data]]];
+    }
+    
     [self createDiskCachePath];
 
     // Archive the cached response on disk
@@ -587,14 +593,12 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
 
 - (BOOL)isCached:(NSURL *)url
 {
+    if (url == nil) 
+    {
+        return NO;
+    }
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     request = [SDURLCache canonicalRequestForRequest:request];
-
-    if ([super cachedResponseForRequest:request])
-    {
-        NSLog(@"Cache File For URL %@ exist", url.relativeString);
-        return YES;
-    }
     
     NSString *cacheKey = [SDURLCache cacheKeyForURL:url];
     NSString *cacheFile = [diskCachePath stringByAppendingPathComponent:cacheKey];
@@ -607,7 +611,7 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
         NSLog(@"Cache File For URL %@ exist", url.relativeString);
         return YES;
     }
-    NSLog(@"Cache File For URL %@ not exist", url.relativeString);
+  //  NSLog(@"Cache File For URL %@ not exist", url.relativeString);
     return NO;
 }
 

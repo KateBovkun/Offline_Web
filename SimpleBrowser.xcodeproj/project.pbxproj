@@ -25,6 +25,22 @@
 		53DF5C241519F293003C81A4 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DF5C1D1519F293003C81A4 /* FMDatabaseQueue.m */; };
 		53DF5C261519F293003C81A4 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DF5C201519F293003C81A4 /* FMResultSet.m */; };
 		53FC8AC31521CB7C00229136 /* PageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AC21521CB7C00229136 /* PageLoader.m */; };
+		53FC8B031524576D00229136 /* NSData+ZKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AE61524576D00229136 /* NSData+ZKAdditions.m */; };
+		53FC8B041524576D00229136 /* NSDate+ZKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AE81524576D00229136 /* NSDate+ZKAdditions.m */; };
+		53FC8B051524576D00229136 /* NSDictionary+ZKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AEA1524576D00229136 /* NSDictionary+ZKAdditions.m */; };
+		53FC8B061524576D00229136 /* NSFileHandle+ZKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AEC1524576D00229136 /* NSFileHandle+ZKAdditions.m */; };
+		53FC8B071524576D00229136 /* NSFileManager+ZKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AEE1524576D00229136 /* NSFileManager+ZKAdditions.m */; };
+		53FC8B081524576D00229136 /* NSString+ZKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AF01524576D00229136 /* NSString+ZKAdditions.m */; };
+		53FC8B091524576D00229136 /* ZKArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AF21524576D00229136 /* ZKArchive.m */; };
+		53FC8B0A1524576D00229136 /* ZKCDHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AF41524576D00229136 /* ZKCDHeader.m */; };
+		53FC8B0B1524576D00229136 /* ZKCDTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AF61524576D00229136 /* ZKCDTrailer.m */; };
+		53FC8B0C1524576D00229136 /* ZKCDTrailer64.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AF81524576D00229136 /* ZKCDTrailer64.m */; };
+		53FC8B0D1524576D00229136 /* ZKCDTrailer64Locator.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AFA1524576D00229136 /* ZKCDTrailer64Locator.m */; };
+		53FC8B0E1524576D00229136 /* ZKDataArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AFC1524576D00229136 /* ZKDataArchive.m */; };
+		53FC8B0F1524576D00229136 /* ZKDefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8AFE1524576D00229136 /* ZKDefs.m */; };
+		53FC8B101524576D00229136 /* ZKLFHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8B001524576D00229136 /* ZKLFHeader.m */; };
+		53FC8B111524576D00229136 /* ZKLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8B021524576D00229136 /* ZKLog.m */; };
+		53FC8B1415246AD000229136 /* WorkWithArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FC8B1315246ACF00229136 /* WorkWithArchive.m */; };
 		B5D92C5E13FFFBBA00510F99 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D92C5D13FFFBBA00510F99 /* UIKit.framework */; };
 		B5D92C6013FFFBBA00510F99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D92C5F13FFFBBA00510F99 /* Foundation.framework */; };
 		B5D92C6213FFFBBA00510F99 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D92C6113FFFBBA00510F99 /* CoreGraphics.framework */; };
@@ -80,6 +96,38 @@
 		53DF5C201519F293003C81A4 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		53FC8AC11521CB7C00229136 /* PageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageLoader.h; sourceTree = "<group>"; };
 		53FC8AC21521CB7C00229136 /* PageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageLoader.m; sourceTree = "<group>"; };
+		53FC8AE51524576D00229136 /* NSData+ZKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ZKAdditions.h"; sourceTree = "<group>"; };
+		53FC8AE61524576D00229136 /* NSData+ZKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ZKAdditions.m"; sourceTree = "<group>"; };
+		53FC8AE71524576D00229136 /* NSDate+ZKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZKAdditions.h"; sourceTree = "<group>"; };
+		53FC8AE81524576D00229136 /* NSDate+ZKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZKAdditions.m"; sourceTree = "<group>"; };
+		53FC8AE91524576D00229136 /* NSDictionary+ZKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ZKAdditions.h"; sourceTree = "<group>"; };
+		53FC8AEA1524576D00229136 /* NSDictionary+ZKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ZKAdditions.m"; sourceTree = "<group>"; };
+		53FC8AEB1524576D00229136 /* NSFileHandle+ZKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+ZKAdditions.h"; sourceTree = "<group>"; };
+		53FC8AEC1524576D00229136 /* NSFileHandle+ZKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+ZKAdditions.m"; sourceTree = "<group>"; };
+		53FC8AED1524576D00229136 /* NSFileManager+ZKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ZKAdditions.h"; sourceTree = "<group>"; };
+		53FC8AEE1524576D00229136 /* NSFileManager+ZKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ZKAdditions.m"; sourceTree = "<group>"; };
+		53FC8AEF1524576D00229136 /* NSString+ZKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZKAdditions.h"; sourceTree = "<group>"; };
+		53FC8AF01524576D00229136 /* NSString+ZKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZKAdditions.m"; sourceTree = "<group>"; };
+		53FC8AF11524576D00229136 /* ZKArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKArchive.h; sourceTree = "<group>"; };
+		53FC8AF21524576D00229136 /* ZKArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKArchive.m; sourceTree = "<group>"; };
+		53FC8AF31524576D00229136 /* ZKCDHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKCDHeader.h; sourceTree = "<group>"; };
+		53FC8AF41524576D00229136 /* ZKCDHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKCDHeader.m; sourceTree = "<group>"; };
+		53FC8AF51524576D00229136 /* ZKCDTrailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKCDTrailer.h; sourceTree = "<group>"; };
+		53FC8AF61524576D00229136 /* ZKCDTrailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKCDTrailer.m; sourceTree = "<group>"; };
+		53FC8AF71524576D00229136 /* ZKCDTrailer64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKCDTrailer64.h; sourceTree = "<group>"; };
+		53FC8AF81524576D00229136 /* ZKCDTrailer64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKCDTrailer64.m; sourceTree = "<group>"; };
+		53FC8AF91524576D00229136 /* ZKCDTrailer64Locator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKCDTrailer64Locator.h; sourceTree = "<group>"; };
+		53FC8AFA1524576D00229136 /* ZKCDTrailer64Locator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKCDTrailer64Locator.m; sourceTree = "<group>"; };
+		53FC8AFB1524576D00229136 /* ZKDataArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKDataArchive.h; sourceTree = "<group>"; };
+		53FC8AFC1524576D00229136 /* ZKDataArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKDataArchive.m; sourceTree = "<group>"; };
+		53FC8AFD1524576D00229136 /* ZKDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKDefs.h; sourceTree = "<group>"; };
+		53FC8AFE1524576D00229136 /* ZKDefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKDefs.m; sourceTree = "<group>"; };
+		53FC8AFF1524576D00229136 /* ZKLFHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKLFHeader.h; sourceTree = "<group>"; };
+		53FC8B001524576D00229136 /* ZKLFHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKLFHeader.m; sourceTree = "<group>"; };
+		53FC8B011524576D00229136 /* ZKLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKLog.h; sourceTree = "<group>"; };
+		53FC8B021524576D00229136 /* ZKLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKLog.m; sourceTree = "<group>"; };
+		53FC8B1215246ACF00229136 /* WorkWithArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkWithArchive.h; sourceTree = "<group>"; };
+		53FC8B1315246ACF00229136 /* WorkWithArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkWithArchive.m; sourceTree = "<group>"; };
 		B5D92C5913FFFBBA00510F99 /* SimpleBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D92C5D13FFFBBA00510F99 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5D92C5F13FFFBBA00510F99 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -162,6 +210,43 @@
 			path = FMDatabase;
 			sourceTree = "<group>";
 		};
+		53FC8AE41524576D00229136 /* touchZipKit */ = {
+			isa = PBXGroup;
+			children = (
+				53FC8AE51524576D00229136 /* NSData+ZKAdditions.h */,
+				53FC8AE61524576D00229136 /* NSData+ZKAdditions.m */,
+				53FC8AE71524576D00229136 /* NSDate+ZKAdditions.h */,
+				53FC8AE81524576D00229136 /* NSDate+ZKAdditions.m */,
+				53FC8AE91524576D00229136 /* NSDictionary+ZKAdditions.h */,
+				53FC8AEA1524576D00229136 /* NSDictionary+ZKAdditions.m */,
+				53FC8AEB1524576D00229136 /* NSFileHandle+ZKAdditions.h */,
+				53FC8AEC1524576D00229136 /* NSFileHandle+ZKAdditions.m */,
+				53FC8AED1524576D00229136 /* NSFileManager+ZKAdditions.h */,
+				53FC8AEE1524576D00229136 /* NSFileManager+ZKAdditions.m */,
+				53FC8AEF1524576D00229136 /* NSString+ZKAdditions.h */,
+				53FC8AF01524576D00229136 /* NSString+ZKAdditions.m */,
+				53FC8AF11524576D00229136 /* ZKArchive.h */,
+				53FC8AF21524576D00229136 /* ZKArchive.m */,
+				53FC8AF31524576D00229136 /* ZKCDHeader.h */,
+				53FC8AF41524576D00229136 /* ZKCDHeader.m */,
+				53FC8AF51524576D00229136 /* ZKCDTrailer.h */,
+				53FC8AF61524576D00229136 /* ZKCDTrailer.m */,
+				53FC8AF71524576D00229136 /* ZKCDTrailer64.h */,
+				53FC8AF81524576D00229136 /* ZKCDTrailer64.m */,
+				53FC8AF91524576D00229136 /* ZKCDTrailer64Locator.h */,
+				53FC8AFA1524576D00229136 /* ZKCDTrailer64Locator.m */,
+				53FC8AFB1524576D00229136 /* ZKDataArchive.h */,
+				53FC8AFC1524576D00229136 /* ZKDataArchive.m */,
+				53FC8AFD1524576D00229136 /* ZKDefs.h */,
+				53FC8AFE1524576D00229136 /* ZKDefs.m */,
+				53FC8AFF1524576D00229136 /* ZKLFHeader.h */,
+				53FC8B001524576D00229136 /* ZKLFHeader.m */,
+				53FC8B011524576D00229136 /* ZKLog.h */,
+				53FC8B021524576D00229136 /* ZKLog.m */,
+			);
+			path = touchZipKit;
+			sourceTree = "<group>";
+		};
 		B5D92C4E13FFFBB900510F99 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +284,7 @@
 		B5D92C6313FFFBBA00510F99 /* SimpleBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				53FC8AE41524576D00229136 /* touchZipKit */,
 				53FC8AC11521CB7C00229136 /* PageLoader.h */,
 				53FC8AC21521CB7C00229136 /* PageLoader.m */,
 				538AF5831521A24100D3E93C /* ASI */,
@@ -218,6 +304,8 @@
 				B5D92C6413FFFBBA00510F99 /* Supporting Files */,
 				53DF5C071519E6A6003C81A4 /* WorkWithCache.h */,
 				53DF5C081519E6A6003C81A4 /* WorkWithCache.m */,
+				53FC8B1215246ACF00229136 /* WorkWithArchive.h */,
+				53FC8B1315246ACF00229136 /* WorkWithArchive.m */,
 			);
 			path = SimpleBrowser;
 			sourceTree = "<group>";
@@ -316,6 +404,22 @@
 				538AF5AB1521B3AD00D3E93C /* ASIDataCompressor.m in Sources */,
 				538AF5AC1521B3AD00D3E93C /* ASIDataDecompressor.m in Sources */,
 				53FC8AC31521CB7C00229136 /* PageLoader.m in Sources */,
+				53FC8B031524576D00229136 /* NSData+ZKAdditions.m in Sources */,
+				53FC8B041524576D00229136 /* NSDate+ZKAdditions.m in Sources */,
+				53FC8B051524576D00229136 /* NSDictionary+ZKAdditions.m in Sources */,
+				53FC8B061524576D00229136 /* NSFileHandle+ZKAdditions.m in Sources */,
+				53FC8B071524576D00229136 /* NSFileManager+ZKAdditions.m in Sources */,
+				53FC8B081524576D00229136 /* NSString+ZKAdditions.m in Sources */,
+				53FC8B091524576D00229136 /* ZKArchive.m in Sources */,
+				53FC8B0A1524576D00229136 /* ZKCDHeader.m in Sources */,
+				53FC8B0B1524576D00229136 /* ZKCDTrailer.m in Sources */,
+				53FC8B0C1524576D00229136 /* ZKCDTrailer64.m in Sources */,
+				53FC8B0D1524576D00229136 /* ZKCDTrailer64Locator.m in Sources */,
+				53FC8B0E1524576D00229136 /* ZKDataArchive.m in Sources */,
+				53FC8B0F1524576D00229136 /* ZKDefs.m in Sources */,
+				53FC8B101524576D00229136 /* ZKLFHeader.m in Sources */,
+				53FC8B111524576D00229136 /* ZKLog.m in Sources */,
+				53FC8B1415246AD000229136 /* WorkWithArchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,7 +27,7 @@
                                                          diskCapacity:1024*1024*5 // 5MB disk cache
                                                              diskPath:[SDURLCache defaultCachePath]] retain];
     [NSURLCache setSharedURLCache:urlCache];
-    ifMoSiButton.selected = YES;
+   // ifMoSiButton.selected = YES;
     [self checkURLBarText];
     cachePath = nil;
 	[super viewDidLoad];

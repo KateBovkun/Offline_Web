@@ -37,12 +37,31 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* urlString = [tableData objectAtIndex:indexPath.row];
-    NSLog(@"%@", urlString);
-    if ([cache isCached:[NSURL URLWithString:urlString]]) 
+    NSURL* url;
+    NSString* actualUrl = [[NSUserDefaults standardUserDefaults] objectForKey:[tableData objectAtIndex:indexPath.row]];
+    if (actualUrl != nil) 
+    {
+        url = [NSURL fileURLWithPath:actualUrl];
+        NSData * data = [[NSData alloc] initWithContentsOfURL:url];
+        if (data == nil) 
+        {
+            NSLog(@"PANIC!");
+            return;
+        }
+    /*    [listWebView loadRequest:[NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:100]];
+        //[listWebView loadData:data MIMEType:@"text/html" textEncodingName:@"UTF8" baseURL:nil];
+        return;*/
+//        [urlString initWithString:actualUrl];
+    }
+    else {
+        url = [NSURL URLWithString:[tableData objectAtIndex:indexPath.row]];
+//        [urlString initWithString:[tableData objectAtIndex:indexPath.row]];
+    }
+ //   NSLog(@"%@", url.relativePath);
+    if ([cache isCached:url] || actualUrl != nil) 
     {
         //NSData * urlData = [cache getCachedFile:[NSURL URLWithString:urlString]];
-        [listWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:100]];
+        [listWebView loadRequest:[NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:100]];
         //[listWebView loadData:urlData MIMEType:@"text/html" textEncodingName:@"UTF8" baseURL:nil];
     }
 
@@ -71,7 +90,7 @@
 {
     if (section == 0) 
     {
-        return 42;
+        return 64;
     }
     return 0;
 }
@@ -94,6 +113,28 @@
 - (void) initDataArray
 {
     tableData = [[[NSArray alloc] initWithObjects:
+        @"http://pionerskaya.ru/wp/CleanHTML/articles.zip",
+        @"index.html",
+        @"article-1.html",
+        @"article-2.html",
+        @"article-3.html",
+        @"article-4.html",
+        @"article-5.html",
+        @"article-6.html",
+        @"article-7.html",
+        @"article-8.html",
+        @"article-9.html",
+        @"article-10.html",
+        @"article-11.html",
+        @"article-12.html",
+        @"article-13.html",
+        @"article-14.html",
+        @"article-15.html",
+        @"article-16.html",
+        @"article-17.html",
+        @"article-18.html",
+        @"article-19.html",
+        @"article-20.html",
         @"http://ddarchive.net/wp-projects/ipad2/html5-test/articles/",
         @"http://ddarchive.net/wp-projects/ipad2/html5-test/articles/article-1.html",
         @"http://ddarchive.net/wp-projects/ipad2/html5-test/articles/article-2.html",

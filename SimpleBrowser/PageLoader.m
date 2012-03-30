@@ -14,9 +14,19 @@
 
 #pragma mark request 
 
+-(void) requestPageWithURLString:(NSString *)urlString
+{
+    NSURL * url = [NSURL fileURLWithPath:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    responseData = [[NSMutableData alloc] init];
+    myconnection = [[NSURLConnection connectionWithRequest:request delegate:nil] retain];
+}
+
 -(void) requestPageWithURL:(NSURL *)url
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLCacheStorageAllowed timeoutInterval:20.0f];
+    NSLog(@"request with url %@", url.relativePath);
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     responseData = [[NSMutableData alloc] init];
     myconnection = [[NSURLConnection connectionWithRequest:request delegate:self] retain];
@@ -24,7 +34,7 @@
 
 -(void) requestPage
 {
-    NSString *urlString = @"http://pionerskaya.ru/wp/CleanHTML/index-manifest.html";
+    NSString *urlString = @"http://pionerskaya.ru/wp/CleanHTML/articles.zip";
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLCacheStorageAllowed timeoutInterval:20.0f];

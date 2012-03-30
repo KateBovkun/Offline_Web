@@ -21,6 +21,7 @@
 
 -(void) requestPage;
 -(void) requestPageWithURL:(NSURL*)url;
+-(void) requestPageWithURLString:(NSString *)urlString;
 -(void) ASIRequestPageWithURL:(NSURL *)url;
 
 @end
